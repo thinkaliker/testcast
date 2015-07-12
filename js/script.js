@@ -47,7 +47,7 @@ function onInitError() {
   console.log("Initialization failed");
 }
 
-$('#castme').click(function() {
+$('.castme').click(function() {
   launchApp();
 });
 
@@ -98,7 +98,7 @@ function onLoadError() {
 }
 
 //stop
-$('#stopme').click(function() {
+$('.stopme').click(function() {
   stopApp();
 });
 
