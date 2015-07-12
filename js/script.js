@@ -80,14 +80,13 @@ function loadMedia() {
     return;
   }
 
-  var mediaInfo = new
-  chrome.cast.media.MediaInfo('http://i.imgur.com/mOnvOJG.png');
-  mediaInfo.contentType = 'image/png';
+  //var mediaInfo = new chrome.cast.media.MediaInfo('http://i.imgur.com/mOnvOJG.png');
+  //mediaInfo.contentType = 'image/png';
 
   var request = new chrome.cast.media.LoadRequest(mediaInfo);
   request.autoplay = true;
 
-  session.loadMedia(request, onLoadSuccess, onLoadError);
+  //session.loadMedia(request, onLoadSuccess, onLoadError);
 }
 
 function onLoadSuccess() {
