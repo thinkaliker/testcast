@@ -48,6 +48,7 @@ function onInitError() {
 }
 
 $('.castme').click(function() {
+  console.log('attempting to start');
   launchApp();
 });
 
@@ -103,6 +104,7 @@ $('.stopme').click(function() {
 });
 
 function stopApp() {
+  console.log('attempting to stop');
   session.stop(onStopAppSuccess, onStopAppError);
 }
 
