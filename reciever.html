@@ -29,17 +29,24 @@ limitations under the License.
 	    vertical-align:middle;
 	    color:#fff;
 	    background-color:#000;
-	    font-weight:bold;
-	    font-family:Droid Sans, sans-serif;
 	    font-size:40px;
-	}
+	} 
+  h1 {
+    display: block;
+    background: #fff !imporant;
+    color:#000 !important;
+    padding-right: 50px;
+  }
     </style>
 
-    <title>Cast Hello Text</title>
+    <title>NOISESUPPLY Chromecast Receiver</title>
   </head>
   <body>
 
-	<div> <h1>NOISESUPPLY</h1>Now Playing: <span id="message"></span> </div>
+	<div>
+    <h1>NOISESUPPLY</h1>
+      <p class="nowplaying">Now Playing: <span id="message"></span></p>
+    </div>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
     <script type="text/javascript">
       window.onload = function() {
