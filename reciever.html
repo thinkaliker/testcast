@@ -21,23 +21,25 @@ limitations under the License.
 	    overflow:hidden;
 	  }
       div{
-	    height:720PX;
-	    width:1280PX;
+        width: 1280px;
+        height: 720px;
 	    text-align:center;
 	    border:0px solid silver;
 	    display: table-cell;
 	    vertical-align:middle;
-	    color:#eee;
-	    background-color:#333;
+	    color:#fff;
+	    background-color:#000;
 	    font-weight:bold;
 	    font-family:Verdana, Geneva, sans-serif;
 	    font-size:40px;
 	}
     </style>
+
     <title>Cast Hello Text</title>
   </head>
   <body>
-	<DIV id="message">Talk to me</DIV>
+
+	<div> <h1>NOISESUPPLY</h1>Now Playing: <span id="message"></span> </div>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
     <script type="text/javascript">
       window.onload = function() {
