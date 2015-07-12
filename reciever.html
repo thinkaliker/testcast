@@ -88,7 +88,7 @@ limitations under the License.
 
         window.urlBus.onMessage = function(event) {
           console.log('url [' + event.senderId + ']: ' + event.data);
-          playTrack(event.data);
+          playURL(event.data);
           window.urlBus.send(event.senderId, event.data);
         }
         // handler for the CastMessageBus message event
@@ -105,6 +105,11 @@ limitations under the License.
         window.castReceiverManager.start({statusText: "Application is starting"});
         console.log('Receiver Manager started');
       };
+      function playURL(text) {
+        console.log(text);
+        playTrack(text);
+        document.getElementById("message").innerHTML+=text;
+      }
 
       // utility function to display the text message in the input field
       function displayText(text) {
