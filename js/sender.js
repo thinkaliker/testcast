@@ -35,3 +35,28 @@ onLaunch = function(activity) {
   $(".launchedOption").show();
   $(".unlaunchedOption").hide();
 };
+
+sendMessage = function() {
+  var text = $("#message").val();
+  var data = { type : "message", text : text };
+  cast_api.sendMessage(cv_activity.activityId, "com.nerdwin15.demo", data, function(error) {
+    $("#log").append("<li>Sent message of " + text + " to cast</li>");
+  });
+};
+
+sendColor = function() {
+  var color = $("#color").val();
+  var data = { type : "color", color : color };
+  cast_api.sendMessage(cv_activity.activityId, "com.nerdwin15.demo", data, function(error) {
+    $("#log").append("<li>Sent color change to " + color + " to cast</li>");
+  });
+}
+
+stop = function() {
+  cast_api.stopActivity(cv_activity.activityId, function() {
+    $("#log").append("<li>Stopped activity with id: " + cv_activity.activityId + "</li>");
+    cv_activity = null;
+  });
+  $(".launchedOption").hide();
+  $(".unlaunchedOption").show();
+};
