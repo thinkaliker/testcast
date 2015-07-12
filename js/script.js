@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 function initializeCastApi() {
-  var applicationID = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
+  var applicationID = B07518FC; //chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
   var sessionRequest = new chrome.cast.SessionRequest(applicationID);
   var apiConfig = new chrome.cast.ApiConfig(sessionRequest,
     sessionListener,
