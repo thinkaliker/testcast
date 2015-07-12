@@ -98,7 +98,7 @@ function onLoadError() {
 }
 
 //stop
-$('#stop').click(function() {
+$('#stopme').click(function() {
   stopApp();
 });
 
