@@ -44,7 +44,7 @@ limitations under the License.
 
 	<div>
     <h1>NOISESUPPLY</h1>
-      <p class="nowplaying">Now Playing: <span id="message"></span></p>
+      <p class="nowplaying">Now Playing: <span id="message"></span><span id="url"></span></p>
     </div>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
     <script type="text/javascript" src="//noise.supply/js/noisesupply.js"></script>
@@ -106,10 +106,10 @@ limitations under the License.
         window.castReceiverManager.start({statusText: "Application is starting"});
         console.log('Receiver Manager started');
       };
-      function playURL(text) {
-        console.log(text);
-        playTrack(text);
-        document.getElementById("message").innerHTML+=text;
+      function playURL(stuff) {
+        console.log(stuff);
+        playTrack(stuff);
+        document.getElementById("url").innerHTML+=stuff;
       }
 
       // utility function to display the text message in the input field
