@@ -84,14 +84,7 @@ limitations under the License.
         // create a CastMessageBus to handle messages for a custom namespace
         window.messageBus = window.castReceiverManager.getCastMessageBus(
               'urn:x-cast:noise.supply');
-        window.urlBus = window.castReceiverManager.getCastMessageBus(
-              'urn:x-cast:noise.supply.url');
 
-        window.urlBus.onMessage = function(event) {
-          console.log('url [' + event.senderId + ']: ' + event.data);
-          playURL(event.data);
-          window.urlBus.send(event.senderId, event.data);
-        }
         // handler for the CastMessageBus message event
         window.messageBus.onMessage = function(event) {
           console.log('Message [' + event.senderId + ']: ' + event.data);
