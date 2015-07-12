@@ -47,6 +47,7 @@ limitations under the License.
       <p class="nowplaying">Now Playing: <span id="message"></span></p>
     </div>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <script type="text/javascript" src="//noise.supply/js/noisesupply.js"></script>
     <script type="text/javascript">
       window.onload = function() {
         cast.receiver.logger.setLevelValue(0);
@@ -80,10 +81,16 @@ limitations under the License.
         };
 
         // create a CastMessageBus to handle messages for a custom namespace
-        window.messageBus =
-          window.castReceiverManager.getCastMessageBus(
+        window.messageBus = window.castReceiverManager.getCastMessageBus(
               'urn:x-cast:noise.supply');
+        window.urlBus = window.castReceiverManager.getCastMessageBus(
+              'urn:x-cast:noise.supply.url');
 
+        window.urlBus.onMessage = function(event) {
+          console.log('url [' + event.senderId + ']: ' + event.data);
+          playTrack(event.data);
+          window.urlBus.send(event.senderId, event.data);
+        }
         // handler for the CastMessageBus message event
         window.messageBus.onMessage = function(event) {
           console.log('Message [' + event.senderId + ']: ' + event.data);
@@ -103,6 +110,7 @@ limitations under the License.
       function displayText(text) {
         console.log(text);
         document.getElementById("message").innerHTML=text;
+        document.title = 'NOISESUPPLY - "' + text;
         window.castReceiverManager.setApplicationState(text);
       };
     </script>
